@@ -41,6 +41,25 @@ const profile syntechlfprofile = {
 	}
 };
 
+
+// SynTECH-LF normal temp lead-free profile
+const profile kester = {
+	"KESTER LeadFree", {
+		 50, 50, 50, 50, 60, 70, 80, 90,100,110,120,130,140,149,158,166, // 0-150s
+		175,175,175,175,175,175,184,193,201,210,219,220,220,220,220,220,220,220,230,210,200,200,100,100,100,100,100, // Adjust peak from 230 to 249C
+		100,100,50,50,0,  // 320-470s
+	}
+};
+
+// SynTECH-LF normal temp lead-free profile
+const profile kestermpcb = {
+	"KESTER MPCB", {
+		 50, 50, 50, 50, 60, 70, 80, 90,100,110,120,130,140,149,158,166, // 0-150s
+		175,175,185,185,185,185,184,193,201,210,219,230,240,240,240,240,240,240,240,240,240,249,100,100,100,100,100, // Adjust peak from 230 to 249C
+		100,100,50,50,0,  // 320-470s
+	}
+};
+
 #ifdef RAMPTEST
 // Ramp speed test temp profile
 const profile rampspeed_testprofile = {
@@ -70,6 +89,8 @@ ramprofile ee1 = { "CUSTOM #1" };
 ramprofile ee2 = { "CUSTOM #2" };
 
 const profile* profiles[] = {
+	&kester,
+	&kestermpcb,
 	&syntechlfprofile,
 	&nc31profile,
 	&am4300profile,
